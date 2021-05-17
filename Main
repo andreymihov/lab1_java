@@ -1,0 +1,50 @@
+package Lab;
+
+import Lab.Lab1.TrainNumber;
+import Lab.Lab1.Cities;
+import Lab.Lab1.Trip;
+import Lab.Lab1.Trips;
+import java.sql.Time;
+
+
+public class Main {
+
+    public static <and> void main(String[] args) {
+        //TrainNumber trainNumber = new TrainNumber(40, 150);
+
+        Cities.list.add("Odessa");
+        Cities.list.add("Herson");
+        Cities.list.add("Nikolaev");
+        Cities.list.add("Kiev");
+        Cities.list.add("Lviv");
+        Cities.list.add("Poltava");
+        Cities.list.add("Venezia");
+
+
+        System.out.println("");
+        Trips trips = new Trips();
+
+        trips.schedule.add(new Trip(1, new TrainNumber(50, 140), new Time(8,35,0), new Time(14,40,20),150 ));
+        trips.schedule.add(new Trip(2, new TrainNumber(90, 200), new Time(7,25,0), new Time(12,20,10),250 ));
+        trips.schedule.add(new Trip(3, new TrainNumber(30, 90), new Time(8,20,0), new Time(13,20,00),400 ));
+
+        System.out.println(trips);
+
+        int i = 0;
+        for (String city:Cities.list) {
+            System.out.println(i++ + ": " + city);
+        }
+
+        System.out.println(' ');
+
+        int[] n  = {1,2,3,4,5,6,7};
+        System.out.println("Choose the city: ");
+        for (Trip temptrip:trips.schedule) {
+            if (temptrip.getCity_id() == n.length);
+                System.out.println(temptrip);
+            }
+
+        }
+    }
+
+
